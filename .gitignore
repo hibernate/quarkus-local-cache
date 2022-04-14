@@ -10,6 +10,9 @@ hs_err_pid*
 /build
 */build
 
+# Jakarta transformed sources
+/jakarta/src
+
 # IntelliJ specific files/directories
 out
 .idea
