@@ -79,9 +79,9 @@
 
         <!-- Main dependency versions -->
 
-        <version.caffeine>2.9.0</version.caffeine>
-        <version.hibernate>5.4.30.Final</version.hibernate>
-        <version.jboss-logging>3.4.1.Final</version.jboss-logging>
+        <version.caffeine>3.1.1</version.caffeine>
+        <version.hibernate>5.6.8.Final</version.hibernate>
+        <version.jboss-logging>3.4.3.Final</version.jboss-logging>
 
         <!-- Test dependency versions -->
         <junit4.version>4.13.1</junit4.version>
@@ -92,8 +92,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.testTarget>${maven.compiler.target}</maven.compiler.testTarget>
         <maven.compiler.testSource>${maven.compiler.source}</maven.compiler.testSource>
 
