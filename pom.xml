@@ -15,16 +15,14 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.hibernate</groupId>
     <artifactId>quarkus-local-cache</artifactId>
     <name>Local-only Hibernate Cache for Quarkus</name>
     <description>Local-only Hibernate Cache optimized for Quarkus</description>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.0</version>
     <inceptionYear>2019</inceptionYear>
     <url>https://github.com/hibernate/quarkus-local-cache</url>
 
@@ -53,7 +51,7 @@
         <connection>scm:git:git://github.com/hibernate/quarkus-local-cache.git</connection>
         <developerConnection>scm:git:git@github.com:hibernate/quarkus-local-cache.git</developerConnection>
         <url>https://github.com/hibernate/quarkus-local-cache</url>
-        <tag>HEAD</tag>
+        <tag>0.2.0</tag>
     </scm>
     <mailingLists>
         <mailingList>
