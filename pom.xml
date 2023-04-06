@@ -79,7 +79,7 @@
 
         <version.caffeine>3.1.5</version.caffeine>
         <version.hibernate>6.2.0.Final</version.hibernate>
-        <version.jboss-logging>3.4.3.Final</version.jboss-logging>
+        <version.jboss-logging>3.5.0.Final</version.jboss-logging>
 
         <!-- Test dependency versions -->
         <junit4.version>4.13.1</junit4.version>
