@@ -22,7 +22,7 @@
     <artifactId>quarkus-local-cache</artifactId>
     <name>Local-only Hibernate Cache for Quarkus</name>
     <description>Local-only Hibernate Cache optimized for Quarkus</description>
-    <version>0.2.1</version>
+    <version>0.2.2-SNAPSHOT</version>
     <inceptionYear>2019</inceptionYear>
     <url>https://github.com/hibernate/quarkus-local-cache</url>
 
@@ -51,7 +51,7 @@
         <connection>scm:git:git://github.com/hibernate/quarkus-local-cache.git</connection>
         <developerConnection>scm:git:git@github.com:hibernate/quarkus-local-cache.git</developerConnection>
         <url>https://github.com/hibernate/quarkus-local-cache</url>
-        <tag>quarkus-local-cache-0.2.1</tag>
+        <tag>HEAD</tag>
     </scm>
     <mailingLists>
         <mailingList>
