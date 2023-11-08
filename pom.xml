@@ -53,6 +53,10 @@
         <url>https://github.com/hibernate/quarkus-local-cache</url>
         <tag>HEAD</tag>
     </scm>
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>https://ci.hibernate.org/job/quarkus-local-cache/</url>
+    </ciManagement>
     <mailingLists>
         <mailingList>
             <name>Hibernate Announcements</name>
