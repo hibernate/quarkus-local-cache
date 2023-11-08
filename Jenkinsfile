@@ -1,4 +1,4 @@
-@Library('hibernate-jenkins-pipeline-helpers@1.5') _
+@Library('hibernate-jenkins-pipeline-helpers@1.7') _
 
 import org.hibernate.jenkins.pipeline.helpers.version.Version
 
@@ -18,13 +18,13 @@ pipeline {
 		string(
 				name: 'RELEASE_VERSION',
 				defaultValue: '',
-				description: 'The version to be released, e.g. 7.1.0.Final.',
+				description: 'The version to be released, e.g. 0.4.0.',
 				trim: true
 		)
 		string(
 				name: 'DEVELOPMENT_VERSION',
 				defaultValue: '',
-				description: 'The next version to be used after the release, e.g. 7.2.0-SNAPSHOT.',
+				description: 'The next version to be used after the release, e.g. 0.4.1-SNAPSHOT.',
 				trim: true
 		)
 		booleanParam(
@@ -57,8 +57,8 @@ pipeline {
 						throw new IllegalArgumentException("Missing value for parameter DEVELOPMENT_VERSION.")
 					}
 
-					def releaseVersion = Version.parseReleaseVersion(params.RELEASE_VERSION)
-					def developmentVersion = Version.parseDevelopmentVersion(params.DEVELOPMENT_VERSION)
+					def releaseVersion = Version.parseReleaseVersion(params.RELEASE_VERSION, Version.Scheme.JBOSS_NO_FINAL)
+					def developmentVersion = Version.parseDevelopmentVersion(params.DEVELOPMENT_VERSION, Version.Scheme.JBOSS_NO_FINAL)
 					echo "Performing full release for version ${releaseVersion.toString()}"
 
 					withMaven(mavenSettingsConfig: params.RELEASE_DRY_RUN ? null : 'ci-hibernate.deploy.settings.maven',
