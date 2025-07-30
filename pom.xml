@@ -99,6 +99,8 @@
         <maven.compiler.testTarget>${maven.compiler.target}</maven.compiler.testTarget>
         <maven.compiler.testSource>${maven.compiler.source}</maven.compiler.testSource>
 
+        <maven.min.version>3.9.11</maven.min.version>
+
         <!-- Repository Deployment URLs -->
         <local.staging.releases.repo.id>staging-deploy</local.staging.releases.repo.id>
         <local.staging.releases.repo.url>file:${maven.multiModuleProjectDirectory}/target/staging-deploy/maven</local.staging.releases.repo.url>
@@ -223,6 +225,15 @@
                     <configuration>
                         <quiet>true</quiet>
                         <doclint>none</doclint>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-wrapper-plugin</artifactId>
+                    <version>3.3.2</version>
+                    <configuration>
+                        <mavenVersion>${maven.min.version}</mavenVersion>
+                        <distributionType>bin</distributionType>
                     </configuration>
                 </plugin>
             </plugins>
