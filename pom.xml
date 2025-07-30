@@ -86,7 +86,7 @@
         <version.jboss-logging>3.5.0.Final</version.jboss-logging>
 
         <!-- Test dependency versions -->
-        <junit4.version>4.13.1</junit4.version>
+        <version.junit-jupiter>5.13.4</version.junit-jupiter>
         <mockito-core.version>2.22.0</mockito-core.version>
 
         <!-- Build settings -->
@@ -109,6 +109,18 @@
         <central.snapshots.repo.id>central-snapshots</central.snapshots.repo.id>
         <central.snapshots.repo.url>https://central.sonatype.com/repository/maven-snapshots/</central.snapshots.repo.url>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${version.junit-jupiter}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -136,9 +148,8 @@
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit4.version}</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -203,7 +214,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.0</version>
+                    <version>3.5.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
