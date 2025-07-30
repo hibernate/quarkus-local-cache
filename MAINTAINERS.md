@@ -18,11 +18,8 @@ Continuous integration happens on a self-hosted Jenkins instance at https://ci.h
 * Click the "play" button (green triangle) to launch a build.
 * Input the parameters.
 * Click "Build".
-* Release the artifacts on the [OSSRH repository manager](https://oss.sonatype.org/#stagingRepositories).
-  * Log into Nexus. The credentials can be found on Bitwarden; ask a teammate if you don't have access.
-  * Click "staging repositories" to the left.
-  * Select your newly created repository.
-  * Click "Close".
-  * Wait a bit; click "Refresh" if necessary.
-  * Click "Release".
+* If the release option `RELEASE_PUBLISH_AUTOMATICALLY` was selected as `false`-- release the artifacts on the [Maven Central portal](https://central.sonatype.com/).
+  * Log into Maven Central. The credentials can be found on Bitwarden; ask a teammate if you don't have access.
+  * Click on the profile circle at the top right and pick "View Deployments".
+  * Find your deployment on the left and click "Publish".
 * If it doesn't work, [call for help](https://hibernate.org/community/#contribute).
