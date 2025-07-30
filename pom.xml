@@ -28,7 +28,7 @@
 
     <organization>
         <name>Hibernate</name>
-        <url>http://hibernate.org/</url>
+        <url>https://hibernate.org/</url>
     </organization>
     <licenses>
         <license>
@@ -40,7 +40,7 @@
     <developers>
         <developer>
             <id>placeholder</id>
-            <name>See http://www.hibernate.org</name>
+            <name>See https://www.hibernate.org</name>
         </developer>
     </developers>
     <issueManagement>
@@ -63,16 +63,16 @@
             <post>hibernate-announce@lists.jboss.org</post>
             <subscribe>https://lists.jboss.org/mailman/listinfo/hibernate-announce</subscribe>
             <unsubscribe>https://lists.jboss.org/mailman/listinfo/hibernate-announce</unsubscribe>
-            <archive>http://lists.jboss.org/pipermail/hibernate-dev/</archive>
+            <archive>https://lists.jboss.org/pipermail/hibernate-dev/</archive>
         </mailingList>
         <mailingList>
             <name>Hibernate Developers</name>
             <post>hibernate-dev@lists.jboss.org</post>
             <subscribe>https://lists.jboss.org/mailman/listinfo/hibernate-dev</subscribe>
             <unsubscribe>https://lists.jboss.org/mailman/listinfo/hibernate-dev</unsubscribe>
-            <archive>http://lists.jboss.org/pipermail/hibernate-dev/</archive>
+            <archive>https://lists.jboss.org/pipermail/hibernate-dev/</archive>
             <otherArchives>
-                <otherArchive>http://www.mail-archive.com/hibernate-dev%40lists.jboss.org/index.html</otherArchive>
+                <otherArchive>https://www.mail-archive.com/hibernate-dev%40lists.jboss.org/index.html</otherArchive>
             </otherArchives>
         </mailingList>
     </mailingLists>
@@ -100,11 +100,12 @@
         <maven.compiler.testSource>${maven.compiler.source}</maven.compiler.testSource>
 
         <!-- Repository Deployment URLs -->
-        <ossrh.releases.repo.id>ossrh</ossrh.releases.repo.id>
-        <ossrh.releases.repo.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</ossrh.releases.repo.url>
-        <ossrh.releases.repo.baseUrl>https://oss.sonatype.org/</ossrh.releases.repo.baseUrl>
-        <ossrh.snapshots.repo.id>ossrh</ossrh.snapshots.repo.id>
-        <ossrh.snapshots.repo.url>https://oss.sonatype.org/content/repositories/snapshots</ossrh.snapshots.repo.url>
+        <local.staging.releases.repo.id>staging-deploy</local.staging.releases.repo.id>
+        <local.staging.releases.repo.url>file:${maven.multiModuleProjectDirectory}/target/staging-deploy/maven</local.staging.releases.repo.url>
+        <central.releases.repo.id>central-releases</central.releases.repo.id>
+        <central.releases.repo.url>https://central.sonatype.com/api/v1/publisher/</central.releases.repo.url>
+        <central.snapshots.repo.id>central-snapshots</central.snapshots.repo.id>
+        <central.snapshots.repo.url>https://central.sonatype.com/repository/maven-snapshots/</central.snapshots.repo.url>
     </properties>
 
     <dependencies>
@@ -166,17 +167,9 @@
                             <Implementation-Version>${project.version}</Implementation-Version>
                             <Implementation-Vendor>hibernate.org</Implementation-Vendor>
                             <Implementation-Vendor-Id>hibernate.org</Implementation-Vendor-Id>
-                            <Implementation-URL>http://hibernate.org</Implementation-URL>
+                            <Implementation-URL>https://hibernate.org</Implementation-URL>
                         </manifestEntries>
                     </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <preparationGoals>clean install</preparationGoals>
-                    <localCheckout>true</localCheckout>
-                    <tagNameFormat>@{project.version}</tagNameFormat>
                 </configuration>
             </plugin>
         </plugins>
@@ -187,8 +180,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.7.0</version>
                     <configuration>
-                        <source>8</source>
-                        <target>8</target>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -203,7 +196,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
+                    <version>3.1.4</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -238,15 +231,39 @@
 
     <distributionManagement>
         <repository>
-            <id>${ossrh.releases.repo.id}</id>
-            <name>OSSRH Releases Repository</name>
-            <url>${ossrh.releases.repo.url}</url>
+            <id>${central.releases.repo.id}</id>
+            <name>Maven Central Releases Repository</name>
+            <url>${central.releases.repo.url}</url>
         </repository>
         <snapshotRepository>
-            <id>${ossrh.snapshots.repo.id}</id>
-            <name>OSSRH Snapshots Repository</name>
-            <url>${ossrh.snapshots.repo.url}</url>
+            <id>${central.snapshots.repo.id}</id>
+            <name>Maven Central Snapshots Repository</name>
+            <url>${central.snapshots.repo.url}</url>
         </snapshotRepository>
     </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-deploy-plugin</artifactId>
+                            <configuration>
+                                <altDeploymentRepository>${local.staging.releases.repo.id}::${local.staging.releases.repo.url}</altDeploymentRepository>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
