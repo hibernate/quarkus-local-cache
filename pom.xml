@@ -87,7 +87,7 @@
 
         <!-- Test dependency versions -->
         <version.junit-jupiter>5.13.4</version.junit-jupiter>
-        <mockito-core.version>5.18.0</mockito-core.version>
+        <mockito-core.version>5.19.0</mockito-core.version>
         <checker-qual.version>3.49.5</checker-qual.version>
 
         <!-- Build settings -->
@@ -266,7 +266,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.11.2</version>
+                    <version>3.11.3</version>
                     <configuration>
                         <quiet>true</quiet>
                         <doclint>none</doclint>
