@@ -25,6 +25,7 @@ updates:
           # Maven plugins:
           - "*maven*plugin*"
           - "org.apache.maven*:*"
+          - "org.checkerframework*"
           # Other test dependencies
           - "org.mockito:*"
           - "org.junit:*"
