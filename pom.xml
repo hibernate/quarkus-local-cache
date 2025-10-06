@@ -86,9 +86,9 @@
         <version.jboss-logging>3.6.1.Final</version.jboss-logging>
 
         <!-- Test dependency versions -->
-        <version.junit-jupiter>5.13.4</version.junit-jupiter>
+        <version.junit-jupiter>6.0.0</version.junit-jupiter>
         <mockito-core.version>5.20.0</mockito-core.version>
-        <checker-qual.version>3.51.0</checker-qual.version>
+        <checker-qual.version>3.51.1</checker-qual.version>
 
         <!-- Build settings -->
 
@@ -236,7 +236,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.9.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
