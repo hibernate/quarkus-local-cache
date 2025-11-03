@@ -81,7 +81,7 @@
 
         <!-- Main dependency versions -->
 
-        <version.caffeine>3.2.2</version.caffeine>
+        <version.caffeine>3.2.3</version.caffeine>
         <version.hibernate>7.1.5.Final</version.hibernate>
         <version.jboss-logging>3.6.1.Final</version.jboss-logging>
 
