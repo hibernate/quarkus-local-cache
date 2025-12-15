@@ -87,7 +87,7 @@
 
         <!-- Test dependency versions -->
         <version.junit-jupiter>6.0.1</version.junit-jupiter>
-        <mockito-core.version>5.20.0</mockito-core.version>
+        <mockito-core.version>5.21.0</mockito-core.version>
         <checker-qual.version>3.52.1</checker-qual.version>
 
         <!-- Build settings -->
