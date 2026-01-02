@@ -337,6 +337,30 @@
                 </pluginManagement>
             </build>
         </profile>
+
+        <profile>
+            <id>dependency-update</id>
+
+            <repositories>
+                <!--
+                    Enable the Snapshots repository, for Hibernate ORM in particular.
+                 -->
+                <repository>
+                    <id>central-snapshots</id>
+                    <name>Maven Central Snapshots</name>
+                    <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+                    <layout>default</layout>
+                    <releases>
+                        <enabled>false</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
     </profiles>
 
 </project>
