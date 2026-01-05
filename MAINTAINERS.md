@@ -10,7 +10,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Continuous integration
 
-Continuous integration happens on a self-hosted Jenkins instance at https://ci.hibernate.org/job/quarkus-local-cache/.
+Continuous integration happens on a self-hosted Jenkins instance at https://ci.hibernate.org/job/.
+Available CI jobs are:
+- [Build and test](https://ci.hibernate.org/job/quarkus-local-cache/): runs the builds for pull requests and branches.
+- [Dependency update](https://ci.hibernate.org/job/quarkus-local-cache-dependency-update/): updates the dependencies (e.g. Hibernate ORM)
+to the latest snapshot version and builds the project. Tests whether there are any incompatible changes in the upcoming releases (of dependencies).
 
 ## Release
 
