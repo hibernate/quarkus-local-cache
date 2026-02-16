@@ -86,7 +86,7 @@
         <version.jboss-logging>3.6.2.Final</version.jboss-logging>
 
         <!-- Test dependency versions -->
-        <version.junit-jupiter>6.0.2</version.junit-jupiter>
+        <version.junit-jupiter>6.0.3</version.junit-jupiter>
         <mockito-core.version>5.21.0</mockito-core.version>
         <checker-qual.version>3.53.1</checker-qual.version>
 
